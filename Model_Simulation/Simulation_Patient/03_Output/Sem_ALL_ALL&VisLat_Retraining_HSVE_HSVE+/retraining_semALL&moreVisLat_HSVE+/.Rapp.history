@@ -1,0 +1,42 @@
+setwd("/Users/langchen/Documents/Dissertation_manuscript/Modeling_NEW/Sem_retraining_data/retraining_semALL_0.1-0.5&0.8/")
+source("VisualVentral_script2_relearning.r")
+sim_Stddp<-function(matrixA, matrixB,fname,stpA,stpB,savetxt=TRUE) {#
+   matrixA2<-as.matrix(matrixA[,stpA:ncol(matrixA)])#
+  matrixB2<-as.matrix(matrixB[,stpB:ncol(matrixB)])#
+  if(ncol(matrixA2)!=ncol(matrixB2)) {#
+   print("matrixA and matrixB have different No. of features")}#
+  else {#
+  simdp<-matrix(nrow=nrow(matrixB2), ncol=nrow(matrixA2))#
+   for (i in 1:nrow(matrixB2)){#
+       simdp[i,] <- (matrixB2[i,]%*%t(matrixA2))/(sqrt(rowSums(matrixA2^2))*sqrt(sum(matrixB2[i,]^2)))#
+   }#
+  }#
+  if (savetxt) {#
+     write.table(simdp, file = fname, col.names = F, row.names = F)   #use diag(simdp) to get values on the diagonal when Out and Tar contain the same items##
+     } else if (!savetxt) {#
+       return(simdp)#
+	   }#
+}
+source("VisualVentral_script2_relearning.r")
+source("VisualVentral_script2_relearning.r")
+format(13.7,digits=4)
+format(13.7,digits=3)
+format(13.7,digits=2)
+format(13.7,digits=2)
+specify_decimal <- function(x, k) format(round(x, k), nsmall=k)
+specify_decimal(1,1)
+source("VisualVentral_script2_relearning.r")
+source("VisualVentral_script2_relearning.r")
+source("VisualVentral_script2_relearning.r")
+specify_dec
+specify_dec(1,1)
+fnameh1
+matB<-read.table(paste(fnameh1,specify_dec(prop*j,1),"_",rep*retstep,fnameh3,i,fnamee1,sep=""), header = F)
+source("VisualVentral_script2_relearning.r")
+prop
+prop*j
+specify(prop*j,1)
+specify_dec(prop*j,1)
+source("VisualVentral_script2_relearning.r")
+setwd("/Users/langchen/Documents/Dissertation_manuscript/Modeling_NEW/Sem_retraining_data/retraining_semALL&moreVisLat_0.1-0.5&0.8/")
+source("VisualVentral_script2_relearning.r")

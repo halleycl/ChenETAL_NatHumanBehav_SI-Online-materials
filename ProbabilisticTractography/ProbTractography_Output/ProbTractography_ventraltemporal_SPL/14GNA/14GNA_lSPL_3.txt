@@ -1,0 +1,70 @@
+Overlay #1  WXLEFT_PARAHIPPO.HDR
+  Center of mass XYZ 51.25x67.55x10.79
+VOI      nvox[cc]=min/mean/max=SD:	73	0.54	=	0.0000	1.7260	4.0000	=	0.8209
+VOI <>0  nvox[cc]=min/mean/max=SD:	71	0.52	=	1.0000	1.7746	4.0000	=	0.7782
+VOI  >0  nvox[cc]=min/mean/max=SD:	71	0.52	=	1.0000	1.7746	4.0000	=	0.7782
+Mode:	1.00024425983429
+
+Overlay #2  XLFG_MED_2_ROI_14GNA.HDR
+  Center of mass XYZ 49.00x51.00x14.00
+VOI      nvox[cc]=min/mean/max=SD:	81	0.60	=	0.0000	0.7407	2.0000	=	0.5426
+VOI <>0  nvox[cc]=min/mean/max=SD:	56	0.41	=	1.0000	1.0714	2.0000	=	0.2599
+VOI  >0  nvox[cc]=min/mean/max=SD:	56	0.41	=	1.0000	1.0714	2.0000	=	0.2599
+Mode:	1.00024425983429
+
+Overlay #3  WXLLPC_1.HDR
+  Center of mass XYZ 45.59x51.53x42.80
+VOI      nvox[cc]=min/mean/max=SD:	96	0.71	=	0.0000	8862.6140	15000.0000	=	6519.6300
+VOI <>0  nvox[cc]=min/mean/max=SD:	92	0.68	=	241.0000	9247.9450	15000.0000	=	6385.2380
+VOI  >0  nvox[cc]=min/mean/max=SD:	92	0.68	=	241.0000	9247.9450	15000.0000	=	6385.2380
+Mode:	15000
+
+Overlay #4  WXLLPC_2.HDR
+  Center of mass XYZ 38.57x58.71x38.99
+VOI      nvox[cc]=min/mean/max=SD:	119	0.88	=	1.0000	18.9496	88.0000	=	16.4507
+VOI <>0  nvox[cc]=min/mean/max=SD:	119	0.88	=	1.0000	18.9496	88.0000	=	16.4507
+VOI  >0  nvox[cc]=min/mean/max=SD:	119	0.88	=	1.0000	18.9496	88.0000	=	16.4507
+Mode:	3.99706959724426
+
+Overlay #5  WXLMFG_INT_1.HDR
+  Center of mass XYZ 55.61x42.88x35.53
+VOI      nvox[cc]=min/mean/max=SD:	74	0.55	=	0.0000	4.6216	61.0000	=	10.4929
+VOI <>0  nvox[cc]=min/mean/max=SD:	60	0.44	=	1.0000	5.7000	61.0000	=	11.4007
+VOI  >0  nvox[cc]=min/mean/max=SD:	60	0.44	=	1.0000	5.7000	61.0000	=	11.4007
+Mode:	0.998046398162842
+
+Overlay #6  WXLMFG_INT_2.HDR
+  Center of mass XYZ 50.01x48.17x34.99
+VOI      nvox[cc]=min/mean/max=SD:	76	0.56	=	6.0000	528.9737	5521.0000	=	732.5263
+VOI <>0  nvox[cc]=min/mean/max=SD:	76	0.56	=	6.0000	528.9737	5521.0000	=	732.5263
+VOI  >0  nvox[cc]=min/mean/max=SD:	76	0.56	=	6.0000	528.9737	5521.0000	=	732.5263
+Mode:	48.536262512207
+
+Overlay #7  WXLSPL_3.HDR
+  Center of mass XYZ 47.95x51.41x42.41
+VOI      nvox[cc]=min/mean/max=SD:	75	0.55	=	15000.0000	15000.0000	15000.0000	=	0.0000
+VOI <>0  nvox[cc]=min/mean/max=SD:	75	0.55	=	15000.0000	15000.0000	15000.0000	=	0.0000
+VOI  >0  nvox[cc]=min/mean/max=SD:	75	0.55	=	15000.0000	15000.0000	15000.0000	=	0.0000
+Mode:	15000
+
+Overlay #8  WXLSPL_4.HDR
+  Center of mass XYZ 52.17x41.68x42.10
+VOI      nvox[cc]=min/mean/max=SD:	69	0.51	=	0.0000	25.1014	541.0000	=	77.9693
+VOI <>0  nvox[cc]=min/mean/max=SD:	66	0.49	=	1.0000	26.2424	541.0000	=	79.5574
+VOI  >0  nvox[cc]=min/mean/max=SD:	66	0.49	=	1.0000	26.2424	541.0000	=	79.5574
+Mode:	1.05689871311188
+
+Overlay #9  WXXLEFTSPL_1.HDR
+  Center of mass XYZ 50.28x45.84x45.16
+VOI      nvox[cc]=min/mean/max=SD:	43	0.32	=	0.0000	1005.2560	12231.0000	=	2324.3990
+VOI <>0  nvox[cc]=min/mean/max=SD:	42	0.31	=	5.0000	1029.1900	12231.0000	=	2347.2050
+VOI  >0  nvox[cc]=min/mean/max=SD:	42	0.31	=	5.0000	1029.1900	12231.0000	=	2347.2050
+Mode:	17.9208793640137
+
+Overlay #10  WXXLEFTSPL_2.HDR
+  Center of mass XYZ 50.42x41.52x42.90
+VOI      nvox[cc]=min/mean/max=SD:	40	0.30	=	0.0000	25.5500	168.0000	=	47.9134
+VOI <>0  nvox[cc]=min/mean/max=SD:	38	0.28	=	1.0000	26.8947	168.0000	=	48.8123
+VOI  >0  nvox[cc]=min/mean/max=SD:	38	0.28	=	1.0000	26.8947	168.0000	=	48.8123
+Mode:	2.9948718547821
+

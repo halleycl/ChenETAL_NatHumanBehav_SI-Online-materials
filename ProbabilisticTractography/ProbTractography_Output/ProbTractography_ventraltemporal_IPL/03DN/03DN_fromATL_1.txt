@@ -1,0 +1,66 @@
+Overlay #1  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftATLv_1.hdr
+  Center of mass XYZ 44.58x61.94x13.40
+VOI      n=min/mean/max=SD: 53[0.39cc]=15000.0000/15000.0000/15000.0000=0.0000
+VOI <>0  n=min/mean/max=SD: 53[0.39cc]=15000.0000/15000.0000/15000.0000=0.0000
+VOI  >0  n=min/mean/max=SD: 53[0.39cc]=15000.0000/15000.0000/15000.0000=0.0000
+
+Overlay #2  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftATLv_2.hdr
+  Center of mass XYZ 36.61x68.93x12.71
+VOI      n=min/mean/max=SD: 59[0.44cc]=1.0000/9.1864/23.0000=4.5276
+VOI <>0  n=min/mean/max=SD: 59[0.44cc]=1.0000/9.1864/23.0000=4.5276
+VOI  >0  n=min/mean/max=SD: 59[0.44cc]=1.0000/9.1864/23.0000=4.5276
+
+Overlay #3  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftFG_lat_1.hdr
+  Center of mass XYZ 45.56x43.33x18.30
+VOI      n=min/mean/max=SD: 54[0.40cc]=7.0000/152.9074/409.0000=83.9223
+VOI <>0  n=min/mean/max=SD: 54[0.40cc]=7.0000/152.9074/409.0000=83.9223
+VOI  >0  n=min/mean/max=SD: 54[0.40cc]=7.0000/152.9074/409.0000=83.9223
+
+Overlay #4  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftFG_lat_2.hdr
+  Center of mass XYZ 41.77x43.35x18.48
+VOI      n=min/mean/max=SD: 48[0.35cc]=4.0000/36.3750/160.0000=39.4621
+VOI <>0  n=min/mean/max=SD: 48[0.35cc]=4.0000/36.3750/160.0000=39.4621
+VOI  >0  n=min/mean/max=SD: 48[0.35cc]=4.0000/36.3750/160.0000=39.4621
+
+Overlay #5  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftFG_lat_3.hdr
+  Center of mass XYZ 37.96x42.06x18.33
+VOI      n=min/mean/max=SD: 51[0.38cc]=0.0000/80.6863/463.0000=95.2303
+VOI <>0  n=min/mean/max=SD: 47[0.35cc]=10.0000/87.5532/463.0000=96.1412
+VOI  >0  n=min/mean/max=SD: 47[0.35cc]=10.0000/87.5532/463.0000=96.1412
+
+Overlay #6  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftFG_med_1.hdr
+  Center of mass XYZ 53.81x50.35x17.85
+VOI      n=min/mean/max=SD: 62[0.46cc]=111.0000/441.4516/1343.0000=297.8493
+VOI <>0  n=min/mean/max=SD: 62[0.46cc]=111.0000/441.4516/1343.0000=297.8493
+VOI  >0  n=min/mean/max=SD: 62[0.46cc]=111.0000/441.4516/1343.0000=297.8493
+
+Overlay #7  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftIOG_lat.hdr
+  Center of mass XYZ 47.50x28.80x24.43
+VOI      n=min/mean/max=SD: 46[0.34cc]=1.0000/9.9565/73.0000=13.4494
+VOI <>0  n=min/mean/max=SD: 46[0.34cc]=1.0000/9.9565/73.0000=13.4494
+VOI  >0  n=min/mean/max=SD: 46[0.34cc]=1.0000/9.9565/73.0000=13.4494
+
+Overlay #8  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftIPL_1.hdr
+  Center of mass XYZ 43.95x47.76x41.47
+VOI      n=min/mean/max=SD: 55[0.41cc]=0.0000/0.7636/7.0000=1.4525
+VOI <>0  n=min/mean/max=SD: 21[0.16cc]=1.0000/2.0000/7.0000=1.7607
+VOI  >0  n=min/mean/max=SD: 21[0.16cc]=1.0000/2.0000/7.0000=1.7607
+
+Overlay #9  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftIPL_2.hdr
+  Center of mass XYZ 40.82x45.80x44.59
+VOI      n=min/mean/max=SD: 49[0.36cc]=0.0000/1.2245/4.0000=0.8232
+VOI <>0  n=min/mean/max=SD: 43[0.32cc]=1.0000/1.3953/4.0000=0.7283
+VOI  >0  n=min/mean/max=SD: 43[0.32cc]=1.0000/1.3953/4.0000=0.7283
+
+Overlay #10  I:\Tracking\ProbTractography_Exp1_results\03DN\wxleftMTG.hdr
+  Center of mass XYZ 42.58x45.39x25.37
+VOI      n=min/mean/max=SD: 62[0.46cc]=0.0000/103.2419/967.0000=181.8866
+VOI <>0  n=min/mean/max=SD: 58[0.43cc]=1.0000/110.3621/967.0000=186.0235
+VOI  >0  n=min/mean/max=SD: 58[0.43cc]=1.0000/110.3621/967.0000=186.0235
+
+Overlay #11  I:\Tracking\ProbTractography_Exp1_results\03DN\xlFG_med_2_roi_03DN.hdr
+  Center of mass XYZ 52.00x46.00x19.00
+VOI      n=min/mean/max=SD: 81[0.60cc]=16.0000/471.6049/3544.0000=698.2507
+VOI <>0  n=min/mean/max=SD: 81[0.60cc]=16.0000/471.6049/3544.0000=698.2507
+VOI  >0  n=min/mean/max=SD: 81[0.60cc]=16.0000/471.6049/3544.0000=698.2507
+

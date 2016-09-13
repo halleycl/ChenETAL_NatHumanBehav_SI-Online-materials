@@ -1,0 +1,261 @@
+visual feature:###1-2: Animal_Sup; 3-6: Animal_Basic; 7-20: Animal_Spec; 21: Tool_Sup; 22-23: Tool_Basic; 24-30: Tool_Spec##
+
+matA1<-read.table("Lexicon_target.txt",header=F)
+n <- 15
+nlevel <- 20
+prop<-0.05
+crit<-0.5
+nrep<-50
+stpA1<-2
+stpB<-4  #in final file
+stpB1<-3 #in all file
+fnameh1<-"semobj_neurocomp_sighted_withEmpty_mVerbal_trained_lexOutp_pnam_final_noiseWtVisualALL"
+fnameh2<-"semobj_neurocomp_sighted_withEmpty_mVerbal_trained_lexOutp_pnam_all_noiseWtVisualALL"
+fnamee1<-".txt"
+fnameOut1<-"_acc"
+fnameOut2<-"_descprepency"
+fnameOut3<-"_latency"
+
+ntick<-31
+nitem<-24   # item in each category
+matA<-as.matrix(matA1[,stpA1:ncol(matA1)])
+rmatA<-matA[rep(1:nrow(matA),rep(ntick,nrow(matA))),]
+
+###########For picture naming task (final,acc)################
+
+for (j in 11:nlevel) {
+  for (i in 1:n) {
+    if (i<10) {
+    fnameh3<-"_s0"
+    } else {
+    fnameh3<-"_s"
+    }
+    for (rep in 1:nrep) {
+    matB<-read.table(paste(fnameh1,prop*j,fnameh3,i,"_",rep,fnamee1,sep=""), header = F)
+	matB1<-as.matrix(matB[1:48,stpB:ncol(matB)])
+	
+    acc<-as.numeric(rowSums((matA-matB1)< crit & (matA-matB1)>(-1)*crit)==ncol(matA))	
+	stdDP<-sim_Stddp(matA1,matB,paste(fnameh1,prop*j,fnameOut1,"_StdDP",fnameh3,i,fnamee1,sep=""),stpA1,stpB,savetxt=F)
+	
+	acc_el<-(matA-matB1)< crit & (matA-matB1)>(-1)*crit
+	ani_bas<-as.numeric(rowSums(acc_el[,2:5])==ncol(matA[,2:5]))         #animal basic level names
+	ani_spec<-as.numeric(rowSums(acc_el[,11:34])==ncol(matA[,11:34]))    #animal specific level names
+    mmd_bas<-as.numeric(rowSums(acc_el[,7:10])==ncol(matA[,7:10]))       #manmade basic level names
+	mmd_spec<-as.numeric(rowSums(acc_el[,35:58])==ncol(matA[,35:58]))      #manmade specific level names
+	
+	if (rep == 1) {
+        accsubT<-acc
+        stdDPsubT<-stdDP
+		ani_bassubT<-ani_bas
+		ani_specsubT<-ani_spec
+		mmd_bassubT<-mmd_bas
+		mmd_specsubT<-mmd_spec
+        } else {
+        accsubT<-accsubT+acc
+        stdDPsubT<-stdDPsubT+stdDP
+		ani_bassubT<-ani_bassubT+ani_bas
+		ani_specsubT<-ani_specsubT+ani_spec
+		mmd_bassubT<-mmd_bassubT+mmd_bas
+		mmd_specsubT<-mmd_specsubT+mmd_spec
+        }
+     }
+    accsubT<-accsubT/nrep
+	stdDPsubT<-stdDPsubT/nrep
+    ani_bassubT<-ani_bassubT/nrep
+	ani_specsubT<-ani_specsubT/nrep
+	mmd_bassubT<-mmd_bassubT/nrep
+	mmd_specsubT<-mmd_specsubT/nrep
+	
+	nmax<-rowSums(stdDPsubT==apply(stdDPsubT,1,max))>1                      	##find the rows with morethan 1 max value
+	tstdDPsubT<-t(stdDPsubT)                                                    ##R fills matrix by column so needs to be transformed
+	tstdDPsubT[,t(nmax)]<-c(1:nrow(tstdDPsubT))                                 ##replace the rows with more than 1 max
+	stdDPsubT<-t(tstdDPsubT)
+	pos<-which(stdDPsubT==apply(stdDPsubT,1,max),arr.ind=T)                     ##locate the position of max value of each row
+    act<-rowSums((stdDPsubT==apply(stdDPsubT,1,max))*(stdDPsubT>=crit))              ##find the rows with max value smaller than 0.5
+    outsubT<-as.character(matA1[pos[order(pos[,1]),][,2],1])
+	outsubT[act==0]<-"LowSim"
+	outsubT[nmax==1]<-"MoreThanOne"
+		
+	
+	if (i == 1) {
+    accTotal<-accsubT
+    outTotal<-outsubT
+	aBasTotal<-ani_bassubT
+	aSpecTotal<-ani_specsubT
+	mBasTotal<-mmd_bassubT
+	mSpecTotal<-mmd_specsubT
+	
+	
+	} else {
+    accTotal<-cbind(accTotal,accsubT)
+    outTotal<-cbind(outTotal,outsubT)
+	aBasTotal<-cbind(aBasTotal,ani_bassubT)
+	aSpecTotal<-cbind(aSpecTotal,ani_specsubT)
+	mBasTotal<-cbind(mBasTotal,mmd_bassubT)
+	mSpecTotal<-cbind(mSpecTotal,mmd_specsubT)
+	}
+}
+   
+   write.table(accTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut2,fnamee1,sep=""),col.names=F, row.names=F)
+   write.table(outTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut2,"_Response",fnamee1,sep=""),col.names=F, row.names=F)
+   write.table(aBasTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut1,"_animalBasMean",fnamee1,sep=""),col.names=F, row.names=F)
+   write.table(aSpecTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut1,"_animalSpecMean",fnamee1,sep=""),col.names=F, row.names=F)
+   write.table(mBasTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut1,"_manmadeBasMean",fnamee1,sep=""),col.names=F, row.names=F)
+   write.table(mSpecTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut1,"_manmadeSpecMean",fnamee1,sep=""),col.names=F, row.names=F)
+   
+   write.table(rbind(colMeans(aBasTotal[1:24,]),colMeans(aSpecTotal[1:24,]),colMeans(mBasTotal[25:48,]),colMeans(mSpecTotal[25:48,])),file=paste(n,"subjs_",fnameh1,prop*j,fnameOut1,"_BasSpecItemMean",fnamee1,sep=""),col.names=F, row.names=F)
+  }
+  
+
+###########For picture naming task (all,RT)################
+
+for (j in 1:nlevel) {
+  
+    for (i in 1:n) {
+    if (i<10) {
+    fnameh3<-"_s0"
+    } else {
+    fnameh3<-"_s"
+    }
+	for (rep in 1:nrep) {
+	
+	#for accuracy
+	matB<-read.table(paste(fnameh1,prop*j,fnameh3,i,"_",rep,fnamee1,sep=""), header = F)
+	matB1<-as.matrix(matB[1:48,stpB:ncol(matB)])
+	
+    acc_el<-(matA-matB1)< crit & (matA-matB1)>(-1)*crit
+	ani_bas<-as.numeric(rowSums(acc_el[,2:5])==ncol(matA[,2:5]))         #animal basic level names
+	ani_spec<-as.numeric(rowSums(acc_el[,11:34])==ncol(matA[,11:34]))    #animal specific level names
+    mmd_bas<-as.numeric(rowSums(acc_el[,7:10])==ncol(matA[,7:10]))       #manmade basic level names
+	mmd_spec<-as.numeric(rowSums(acc_el[,35:58])==ncol(matA[,35:58]))      #manmade specific level names
+	
+	if (rep == 1) {
+        ani_bassubT<-ani_bas
+		ani_specsubT<-ani_spec
+		mmd_bassubT<-mmd_bas
+		mmd_specsubT<-mmd_spec
+        } else {
+       	ani_bassubT<-ani_bassubT+ani_bas
+		ani_specsubT<-ani_specsubT+ani_spec
+		mmd_bassubT<-mmd_bassubT+mmd_bas
+		mmd_specsubT<-mmd_specsubT+mmd_spec
+        }
+	
+	#for Latency
+    rmatB<-read.table(paste(fnameh2,prop*j,fnameh3,i,"_",rep,fnamee1,sep=""), header = F)
+	rmatB1<-as.matrix(rmatB[1:nrow(rmatB),stpB1:ncol(rmatB)])
+	
+    acc_el1<-(rmatA-rmatB1)< crit & (rmatA-rmatB1)>(-1)*crit
+	ani_bas_T<-as.numeric(rowSums(acc_el1[,2:5])==ncol(rmatA[,2:5]))         #animal basic level names
+	ani_spec_T<-as.numeric(rowSums(acc_el1[,11:34])==ncol(rmatA[,11:34]))    #animal specific level names
+    mmd_bas_T<-as.numeric(rowSums(acc_el1[,7:10])==ncol(rmatA[,7:10]))       #manmade basic level names
+	mmd_spec_T<-as.numeric(rowSums(acc_el1[,35:58])==ncol(rmatA[,35:58]))      #manmade specific level names
+		
+	acc_ani_bas_T<-matrix(ani_bas_T[1:(ntick*nitem)],ntick,nitem)
+	acc_ani_spec_T<-matrix(ani_spec_T[1:(ntick*nitem)],ntick,nitem)
+	acc_mmd_bas_T<-matrix(mmd_bas_T[(ntick*nitem+1):(ntick*nitem*2)],ntick,nitem)
+	acc_mmd_spec_T<-matrix(mmd_spec_T[(ntick*nitem+1):(ntick*nitem*2)],ntick,nitem)
+	nlat_ani_bas_T<-rep(0,nitem)
+	nlat_ani_spec_T<-rep(0,nitem)
+	nlat_mmd_bas_T<-rep(0,nitem)
+	nlat_mmd_spec_T<-rep(0,nitem)
+	
+	for (k in 1:nitem) {
+	   etick = 1
+	   while(etick <=ntick) {
+	    if (acc_ani_bas_T[etick,k]==1) {
+		    nlat_ani_bas_T[k] <- etick -1
+			break
+			} else {
+			etick<-etick+1
+			}
+		}
+	}
+	nlat_ani_bas_T[ani_bas[1:24]==0]<-0
+	
+    for (k in 1:nitem) {
+	   etick = 1
+	   while(etick <=ntick) {
+	    if (acc_ani_spec_T[etick,k]==1) {
+		    nlat_ani_spec_T[k] <- etick -1
+			break
+			} else {
+			etick<-etick+1
+			}
+		}
+	}
+	nlat_ani_spec_T[ani_spec[1:24]==0]<-0
+	
+    for (k in 1:nitem) {
+	   etick = 1
+	   while(etick <=ntick) {
+	    if (acc_mmd_bas_T[etick,k]==1) {
+		    nlat_mmd_bas_T[k] <- etick -1
+			break
+			} else {
+			etick<-etick+1
+			}
+		}
+	}
+	nlat_mmd_bas_T[mmd_bas[25:48]==0]<-0
+	
+    for (k in 1:nitem) {
+	   etick = 1
+	   while(etick <=ntick) {
+	    if (acc_mmd_spec_T[etick,k]==1) {
+		    nlat_mmd_spec_T[k] <- etick -1
+			break
+			} else {
+			etick<-etick+1
+			}
+		}
+	}
+	nlat_mmd_spec_T[mmd_spec[25:48]==0]<-0
+
+	if (rep == 1) {
+        
+		nlat_ani_bassubT<-nlat_ani_bas_T
+		nlat_ani_specsubT<-nlat_ani_spec_T
+		nlat_mmd_bassubT<-nlat_mmd_bas_T
+		nlat_mmd_specsubT<-nlat_mmd_spec_T
+        
+		} else {
+        
+		nlat_ani_bassubT<-nlat_ani_bassubT+nlat_ani_bas_T
+		nlat_ani_specsubT<-nlat_ani_specsubT+nlat_ani_spec_T
+		nlat_mmd_bassubT<-nlat_mmd_bassubT+nlat_mmd_bas_T
+		nlat_mmd_specsubT<-nlat_mmd_specsubT+nlat_mmd_spec_T
+        }
+	
+  }
+    
+    nlat_ani_bassubT<-nlat_ani_bassubT/ani_bassubT[1:nitem]
+	nlat_ani_specsubT<-nlat_ani_specsubT/ani_specsubT[1:nitem]
+	nlat_mmd_bassubT<-nlat_mmd_bassubT/mmd_bassubT[(nitem+1):(2*nitem)]
+	nlat_mmd_specsubT<-nlat_mmd_specsubT/mmd_specsubT[(nitem+1):(2*nitem)]
+	
+	
+	if (i == 1) {
+    nlat_aBasTotal<-nlat_ani_bassubT
+	nlat_aSpecTotal<-nlat_ani_specsubT
+	nlat_mBasTotal<-nlat_mmd_bassubT
+	nlat_mSpecTotal<-nlat_mmd_specsubT
+	
+	
+	} else {
+    
+	nlat_aBasTotal<-cbind(nlat_aBasTotal,nlat_ani_bassubT)
+	nlat_aSpecTotal<-cbind(nlat_aSpecTotal,nlat_ani_specsubT)
+	nlat_mBasTotal<-cbind(nlat_mBasTotal,nlat_mmd_bassubT)
+	nlat_mSpecTotal<-cbind(nlat_mSpecTotal,nlat_mmd_specsubT)
+	}
+}
+   
+   #write.table(nlat_aBasTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut3,"_animalBasMean",fnamee1,sep=""),col.names=F, row.names=F)
+   #write.table(nlat_aSpecTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut3,"_animalSpecMean",fnamee1,sep=""),col.names=F, row.names=F)
+   #write.table(nlat_mBasTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut3,"_manmadeBasMean",fnamee1,sep=""),col.names=F, row.names=F)
+   #write.table(nlat_mSpecTotal,file=paste(n,"subjs_",fnameh1,prop*j,fnameOut3,"_manmadeSpecMean",fnamee1,sep=""),col.names=F, row.names=F)
+   
+   write.table(rbind(colMeans(nlat_aBasTotal,na.rm=T),colMeans(nlat_aSpecTotal,na.rm=T),colMeans(nlat_mBasTotal,na.rm=T),colMeans(nlat_mSpecTotal,na.rm=T)),file=paste(n,"subjs_",fnameh2,prop*j,fnameOut3,"_BasSpecItemMean",fnamee1,sep=""),col.names=F, row.names=F)
+  }
+  

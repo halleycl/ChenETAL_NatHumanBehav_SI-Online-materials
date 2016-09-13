@@ -1,0 +1,66 @@
+Overlay #1  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftATLv_1.hdr
+  Center of mass XYZ 43.58x66.06x15.38
+VOI      n=min/mean/max=SD: 48[0.35cc]=1.0000/12.7708/122.0000=22.2407
+VOI <>0  n=min/mean/max=SD: 48[0.35cc]=1.0000/12.7708/122.0000=22.2407
+VOI  >0  n=min/mean/max=SD: 48[0.35cc]=1.0000/12.7708/122.0000=22.2407
+
+Overlay #2  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftATLv_2.hdr
+  Center of mass XYZ 37.29x71.47x16.19
+VOI      n=min/mean/max=SD: 59[0.44cc]=0.0000/3.6271/25.0000=5.0613
+VOI <>0  n=min/mean/max=SD: 55[0.41cc]=1.0000/3.8909/25.0000=5.1448
+VOI  >0  n=min/mean/max=SD: 55[0.41cc]=1.0000/3.8909/25.0000=5.1448
+
+Overlay #3  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftFG_lat_1.hdr
+  Center of mass XYZ 44.21x47.02x14.94
+VOI      n=min/mean/max=SD: 47[0.35cc]=1.0000/3.0851/8.0000=1.7424
+VOI <>0  n=min/mean/max=SD: 47[0.35cc]=1.0000/3.0851/8.0000=1.7424
+VOI  >0  n=min/mean/max=SD: 47[0.35cc]=1.0000/3.0851/8.0000=1.7424
+
+Overlay #4  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftFG_lat_2.hdr
+  Center of mass XYZ 40.37x46.29x14.68
+VOI      n=min/mean/max=SD: 41[0.30cc]=1.0000/16.0000/81.0000=14.6304
+VOI <>0  n=min/mean/max=SD: 41[0.30cc]=1.0000/16.0000/81.0000=14.6304
+VOI  >0  n=min/mean/max=SD: 41[0.30cc]=1.0000/16.0000/81.0000=14.6304
+
+Overlay #5  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftFG_lat_3.hdr
+  Center of mass XYZ 36.58x44.87x14.38
+VOI      n=min/mean/max=SD: 52[0.38cc]=3.0000/12.5385/31.0000=6.4396
+VOI <>0  n=min/mean/max=SD: 52[0.38cc]=3.0000/12.5385/31.0000=6.4396
+VOI  >0  n=min/mean/max=SD: 52[0.38cc]=3.0000/12.5385/31.0000=6.4396
+
+Overlay #6  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftFG_med_1.hdr
+  Center of mass XYZ 52.85x53.92x16.39
+VOI      n=min/mean/max=SD: 62[0.46cc]=0.0000/1.4355/5.0000=0.9165
+VOI <>0  n=min/mean/max=SD: 60[0.44cc]=1.0000/1.4833/5.0000=0.8924
+VOI  >0  n=min/mean/max=SD: 60[0.44cc]=1.0000/1.4833/5.0000=0.8924
+
+Overlay #7  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftIOG_lat.hdr
+  Center of mass XYZ 47.92x30.25x18.73
+VOI      n=min/mean/max=SD: 40[0.30cc]=0.0000/0.2500/3.0000=0.6304
+VOI <>0  n=min/mean/max=SD: 7[0.05cc]=1.0000/1.4286/3.0000=0.7868
+VOI  >0  n=min/mean/max=SD: 7[0.05cc]=1.0000/1.4286/3.0000=0.7868
+
+Overlay #8  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftIPL_1.hdr
+  Center of mass XYZ 46.27x43.42x39.42
+VOI      n=min/mean/max=SD: 33[0.24cc]=0.0000/204.5455/2516.0000=582.5643
+VOI <>0  n=min/mean/max=SD: 31[0.23cc]=2.0000/217.7419/2516.0000=599.1973
+VOI  >0  n=min/mean/max=SD: 31[0.23cc]=2.0000/217.7419/2516.0000=599.1973
+
+Overlay #9  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftIPL_2.hdr
+  Center of mass XYZ 39.94x40.56x42.02
+VOI      n=min/mean/max=SD: 52[0.38cc]=15000.0000/15000.0000/15000.0000=0.0000
+VOI <>0  n=min/mean/max=SD: 52[0.38cc]=15000.0000/15000.0000/15000.0000=0.0000
+VOI  >0  n=min/mean/max=SD: 52[0.38cc]=15000.0000/15000.0000/15000.0000=0.0000
+
+Overlay #10  I:\Tracking\ProbTractography_Exp1_results\24PH\wxleftMTG.hdr
+  Center of mass XYZ 41.65x45.57x20.46
+VOI      n=min/mean/max=SD: 46[0.34cc]=7.0000/572.3043/2561.0000=737.4843
+VOI <>0  n=min/mean/max=SD: 46[0.34cc]=7.0000/572.3043/2561.0000=737.4843
+VOI  >0  n=min/mean/max=SD: 46[0.34cc]=7.0000/572.3043/2561.0000=737.4843
+
+Overlay #11  I:\Tracking\ProbTractography_Exp1_results\24PH\xlFG_med_2_roi_24PH.hdr
+  Center of mass XYZ 50.00x47.00x16.00
+VOI      n=min/mean/max=SD: 81[0.60cc]=0.0000/2.1235/9.0000=1.4948
+VOI <>0  n=min/mean/max=SD: 77[0.57cc]=1.0000/2.2338/9.0000=1.4500
+VOI  >0  n=min/mean/max=SD: 77[0.57cc]=1.0000/2.2338/9.0000=1.4500
+
